@@ -1,13 +1,7 @@
 import heapq
-from random import randint
+from random import randint, random
 
 from Vertice import TipoVertice
-
-
-    
-   
-
-
 
 class Grafo:
     def __init__(self, adjacencias, postos_brigada, pontos_coleta):
@@ -16,6 +10,7 @@ class Grafo:
         self.pontos_coleta = pontos_coleta  # Lista de vértices que são pontos de coleta de água
         self.caminhoes = []  # Lista de caminhões de combate a incêndio
         self.vertices_queimando = set()  # Conjunto de vértices em chamas
+        self.vertices_queimados_total = set() 
         
     def adicionar_aresta(self, origem, destino, peso):
         """Adiciona uma aresta bidirecional com peso entre dois vértices"""
@@ -27,37 +22,25 @@ class Grafo:
         self.adjacencias[destino].append((origem, peso))
 
     def dijkstra(self, origem, destino):
-        """
-        Implementação do algoritmo de Dijkstra para encontrar o menor caminho
-        Retorna a distância total e o caminho como uma lista de vértices
-        """
         distancias = {vertice: float('inf') for vertice in self.adjacencias}
         anteriores = {vertice: None for vertice in self.adjacencias}
         distancias[origem] = 0
-        heap = [(0, origem)]  # (distância acumulada, vértice atual)
+        heap = [(0, origem)]  # (distância acumulada em minutos, vértice atual)
 
         while heap:
             dist_atual, vertice_atual = heapq.heappop(heap)
-            
             if vertice_atual == destino:
                 break
 
-            if dist_atual > distancias[vertice_atual]:
-                continue
-
             for vizinho, peso in self.adjacencias[vertice_atual]:
-                # Ignora vértices que já estão queimados
-                if vizinho in self.vertices_queimando:
-                    continue
-                    
-                nova_dist = dist_atual + peso
+                nova_dist = dist_atual + peso  # peso = minutos de deslocamento
                 if nova_dist < distancias[vizinho]:
                     distancias[vizinho] = nova_dist
                     anteriores[vizinho] = vertice_atual
                     heapq.heappush(heap, (nova_dist, vizinho))
 
         caminho = self._reconstruir_caminho(anteriores, destino)
-        return distancias[destino], caminho
+        return distancias[destino], caminho  # Retorna tempo total em minutos e caminho
 
     def _reconstruir_caminho(self, anteriores, destino):
         """Reconstroi o caminho a partir do dicionário de vértices anteriores"""
@@ -69,22 +52,36 @@ class Grafo:
         return caminho[::-1]  # Inverte para ficar na ordem correta
     
     def propagar_fogo(self):
-            """
-            Propaga o fogo para vértices vizinhos
-            Retorna lista de novos vértices que começaram a queimar
-            """
-            novos_queimando = set()
-            
-            for vertice in list(self.vertices_queimando):
-                for vizinho, _ in self.adjacencias[vertice]:
-                    if (vizinho not in self.vertices_queimando and 
-                        vizinho.tipo == TipoVertice.NORMAL and
-                        not vizinho.protegido):
-                        novos_queimando.add(vizinho)
-            
-            self.vertices_queimando.update(novos_queimando)
-            return list(novos_queimando)
+        """
+        Versão alternativa com BFS e probabilidade separada
+        """
+        # Primeiro encontra todos os vértices candidatos a propagação com BFS
+        candidatos = set()
+        visitados = set()
+        fila = list(self.vertices_queimando)
         
+        while fila:
+            vertice_atual = fila.pop(0)
+            visitados.add(vertice_atual)
+            
+            for vizinho, _ in self.adjacencias[vertice_atual]:
+                if (vizinho not in self.vertices_queimando and 
+                    vizinho not in visitados and
+                    vizinho.tipo == TipoVertice.NORMAL and
+                    not vizinho.protegido):
+                    
+                    candidatos.add(vizinho)
+                    fila.append(vizinho)
+        
+        # Aplica a probabilidade de 25% nos candidatos
+        novos_queimando = {v for v in candidatos if random() < 0.5}
+        
+        # Atualiza os conjuntos
+        self.vertices_queimando.update(novos_queimando)
+        self.vertices_queimados_total.update(novos_queimando)
+        
+        return list(novos_queimando)
+
     def tem_incendio_ativo(self):
         """Verifica se ainda há vértices em chamas"""
         return len(self.vertices_queimando) > 0

@@ -36,7 +36,7 @@ class Vertice:
             
         # Baseado em características aleatórias do terreno
         seed(self.id)  # Para ser determinístico
-        return randint(500, 5000)  # Litros necessários
+        return randint(100, 1000)  # Litros necessários
         
     def _calcular_equipes_necessarias(self):
         """

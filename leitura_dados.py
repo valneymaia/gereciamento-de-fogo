@@ -2,18 +2,15 @@ from Vertice import Vertice, TipoVertice
 
 def ler_dados_do_arquivo(nome_arquivo):
     try:
-        # Abre o arquivo e remove linhas vazias e espaços extras
         with open(nome_arquivo, 'r') as arquivo:
             linhas = [linha.strip() for linha in arquivo if linha.strip()]
 
-        # Validando o número total de vértices do grafo pela primeira linha do arquivo
         if len(linhas) < 1:
             raise ValueError("O arquivo está vazio ou não contém o número de vértices.")
         num_vertices = int(linhas[0])
         if num_vertices < 3:
             raise ValueError("O número de vértices deve ser pelo menos 3.")
 
-        # Inicializando o grafo
         adjacencias = {Vertice(i): [] for i in range(num_vertices)}
         
         # Lendo as conexões do grafo
@@ -24,11 +21,9 @@ def ler_dados_do_arquivo(nome_arquivo):
                 if vertice1_id < 0 or vertice2_id < 0 or vertice1_id >= num_vertices or vertice2_id >= num_vertices or custo <= 0:
                     raise ValueError(f"Dados inválidos na conexão: {linhas[linha_arquivo]}")
                 
-                # Encontrando os vértices correspondentes
                 vertice1 = next(v for v in adjacencias.keys() if v.id == vertice1_id)
                 vertice2 = next(v for v in adjacencias.keys() if v.id == vertice2_id)
                 
-                # Adicionando arestas bidirecionais
                 adjacencias[vertice1].append((vertice2, custo))
                 adjacencias[vertice2].append((vertice1, custo))
                 vertice1.adicionar_vizinho(vertice2, custo)
@@ -38,7 +33,6 @@ def ler_dados_do_arquivo(nome_arquivo):
                 raise ValueError(f"Erro ao processar a conexão: {linhas[linha_arquivo]}")
             linha_arquivo += 1
 
-        # Verificando fim das conexões
         if linha_arquivo >= len(linhas) or linhas[linha_arquivo].lower() != "fim":
             raise ValueError("A seção de conexões não termina com 'fim'.")
         linha_arquivo += 1
@@ -73,23 +67,34 @@ def ler_dados_do_arquivo(nome_arquivo):
             pontos_coleta.append(coleta)
             linha_arquivo += 1
 
-        # Lendo o ponto inicial do incêndio
-        if linha_arquivo >= len(linhas):
-            raise ValueError("Dado do ponto inicial do incêndio ausente.")
+        # Lendo os pontos iniciais do incêndio (3 vértices)
+        incendios_iniciais = []
+        if linha_arquivo + 2 >= len(linhas):
+            raise ValueError("Dados dos pontos de incêndio ausentes ou incompletos.")
         
-        incendio_id = int(linhas[linha_arquivo])
-        if incendio_id < 0 or incendio_id >= num_vertices:
-            raise ValueError(f"ID do ponto de incêndio inválido: {incendio_id}")
-        
-        incendio_ponto = next(v for v in adjacencias.keys() if v.id == incendio_id)
-        linha_arquivo += 1
+        for _ in range(3):
+            incendio_id = int(linhas[linha_arquivo])
+            if incendio_id < 0 or incendio_id >= num_vertices:
+                raise ValueError(f"ID do ponto de incêndio inválido: {incendio_id}")
+            
+            incendio_ponto = next(v for v in adjacencias.keys() if v.id == incendio_id)
+            
+            # Verifica se não é posto ou ponto de coleta
+            if incendio_ponto.tipo != TipoVertice.NORMAL:
+                raise ValueError(f"O vértice {incendio_id} não pode ser posto/coleta e foco inicial")
+                
+            # Verifica se já foi adicionado
+            if incendio_ponto in incendios_iniciais:
+                raise ValueError(f"Vértice {incendio_id} duplicado como foco inicial")
+                
+            incendios_iniciais.append(incendio_ponto)
+            linha_arquivo += 1
 
-        # Retorna os dados lidos
         return {
             'grafo': adjacencias,
             'postos_brigada': postos_brigada,
             'pontos_coleta': pontos_coleta,
-            'inicio_incendio': incendio_ponto
+            'inicio_incendio': incendios_iniciais
         }
 
     except FileNotFoundError:
