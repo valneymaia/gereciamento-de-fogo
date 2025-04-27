@@ -73,8 +73,8 @@ class Grafo:
                     candidatos.add(vizinho)
                     fila.append(vizinho)
         
-        # Aplica a probabilidade de 50% nos candidatos
-        novos_queimando = {v for v in candidatos if random() < 0.5}
+        # Aplica a probabilidade de 25% nos candidatos
+        novos_queimando = {v for v in candidatos if random() < 0.25}
         
         # Atualiza os conjuntos
         self.vertices_queimando.update(novos_queimando)
