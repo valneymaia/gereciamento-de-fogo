@@ -8,12 +8,7 @@ class TipoVertice(Enum):
 
 class Vertice:
     def __init__(self, id, tipo=TipoVertice.NORMAL):
-        """
-        Inicializa um vértice do grafo de combate a incêndios
-        Args:
-            id: Identificador único do vértice
-            tipo: Tipo do vértice (NORMAL, POSTO_BRIGADA, PONTO_COLETA)
-        """
+    
         self.id = id
         self.tipo = tipo
         self.queimando = False
@@ -21,27 +16,25 @@ class Vertice:
         self.agua_necessaria = self._calcular_agua_necessaria()
         self.equipes_necessarias = self._calcular_equipes_necessarias()
         self.vizinhos = []  # Lista de arestas para vértices vizinhos
+        self.queimado = False
         
     def __lt__(self, other):
         """Permite comparação para ordenação"""
         return self.id < other.id
         
     def _calcular_agua_necessaria(self):
-        """
-        Calcula a água necessária para apagar um incêndio neste vértice
-        Baseado em características do terreno (implementação simplificada)
-        """
+    
         if self.tipo != TipoVertice.NORMAL:
             return 0  # Postos e pontos de coleta não queimam
             
         # Baseado em características aleatórias do terreno
-        seed(self.id)  # Para ser determinístico
+        seed(self.id) #r determinístico
         return randint(100, 1000)  # Litros necessários
         
-    def _calcular_equipes_necessarias(self):
-        """
-        Calcula o número de equipes necessárias para combater o incêndio
-        """
+
+        
+    def _calcular_equipes_necessarias(self): 
+        
         if self.tipo != TipoVertice.NORMAL:
             return 0
             
@@ -56,23 +49,12 @@ class Vertice:
         return False
         
     def apagar_incendio(self):
-        """Tenta apagar o incêndio neste vértice"""
+    
         if self.queimando:
             self.queimando = False
             return True
         return False
         
     def adicionar_vizinho(self, vizinho, peso):
-        """Adiciona um vértice vizinho com o peso da aresta"""
         self.vizinhos.append((vizinho, peso))
-        
-    def risco_incendio(self):
-        """
-        Calcula um fator de risco para propagação de incêndio
-        Baseado em características do terreno (implementação simplificada)
-        """
-        if self.tipo != TipoVertice.NORMAL:
-            return 0
-            
-        seed(self.id + 2)
-        return randint(1, 10)  # Fator de risco de 1 a 10
+   

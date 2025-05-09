@@ -67,9 +67,9 @@ def ler_dados_do_arquivo(nome_arquivo):
             pontos_coleta.append(coleta)
             linha_arquivo += 1
 
-        # Lendo os pontos iniciais do incêndio (3 vértices)
+        # Lendo os pontos iniciais do incêndio (3)
         incendios_iniciais = []
-        if linha_arquivo + 2 >= len(linhas):
+        if linha_arquivo + 1 >= len(linhas):
             raise ValueError("Dados dos pontos de incêndio ausentes ou incompletos.")
         
         for _ in range(3):
