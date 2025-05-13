@@ -10,7 +10,7 @@ class Vertice:
     def __init__(self, id, tipo=TipoVertice.NORMAL):
     
         self.id = id
-        self.tipo = tipo
+        self.tipo = tipo #inicialmente normal
         self.queimando = False
         self.protegido = False
         self.agua_necessaria = self._calcular_agua_necessaria()
