@@ -98,7 +98,7 @@ def ler_dados_do_arquivo(nome_arquivo):
         }
 
     except FileNotFoundError:
-        print(f"Arquivo {nome_arquivo} não encontrado.")
+        print(f"O arquivo {nome_arquivo} não pode ser encontrado.")
         return None
     except ValueError as e:
         print(f"Erro nos dados do arquivo: {e}")
