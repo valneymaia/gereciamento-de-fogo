@@ -1,0 +1,332 @@
+=== SIMULAÇÃO DE COMBATE A INCÊNDIOS ===
+Incêndio iniciado no Parque Ecologico, ao lado da UFCA e na área rural perto do Horto: [2, 4, 8]
+Postos de Brigadas: [1, 5, 9]
+Pontos de água: [0, 7]
+
+
+=== PROGRESSO DA SIMULAÇÃO ===
+
+⏱ Tempo: 0 minutos
+🔥 Vértices em chamas: [4, 8, 2]
+💧 Água disponível: [1000, 1000, 1000]
+🚨 Fogo se propagou para: [11, 3]
+🔥 Vértices completamente queimados: [2, 3, 8, 11, 4]
+Equipe protegeu vértice 1 com sucesso
+Equipe protegeu vértice 5 com sucesso
+Equipe protegeu vértice 7 com sucesso
+Equipe protegeu vértice 9 com sucesso
+Equipe protegeu vértice 10 com sucesso
+🚚 Caminhão 1 indo para vértice 11 (tempo: 24min)
+🚚 Caminhão 2 indo para vértice 2 (tempo: 18min)
+🚚 Caminhão 3 indo para vértice 8 (tempo: 32min)
+
+⏱ Tempo: 32 minutos
+🔥 Vértices em chamas: [11, 2, 3, 4, 8]
+💧 Água disponível: [1000, 1000, 1000]
+🚒 Caminhão 1 apagou fogo em 11 (10 minutos)
+🚒 Caminhão 2 apagou fogo em 2 (10 minutos)
+🚒 Caminhão 3 apagou fogo em 8 (10 minutos)
+✅ Fogo apagado nos vértices: [11, 8, 2]
+
+⏱ Tempo: 42 minutos
+🔥 Vértices em chamas: [4, 3]
+💧 Água disponível: [437, 17, 668]
+Equipe protegeu vértice 2 com sucesso
+Equipe protegeu vértice 11 com sucesso
+🚚 Caminhão 1 indo para vértice 3 (tempo: 28min)
+🚚 Caminhão 2 indo para vértice 3 (tempo: 8min)
+🚚 Caminhão 3 indo para vértice 3 (tempo: 78min)
+
+⏱ Tempo: 120 minutos
+🔥 Vértices em chamas: [4, 3]
+💧 Água disponível: [437, 17, 668]
+🚒 Caminhão 1 apagou fogo em 3 (10 minutos)
+🚚 Caminhão 2 indo para vértice 4 (tempo: 66min)
+🚚 Caminhão 3 indo para vértice 4 (tempo: 66min)
+✅ Fogo apagado nos vértices: [3]
+
+⏱ Tempo: 186 minutos
+🔥 Vértices em chamas: [4]
+💧 Água disponível: [94, 17, 668]
+🚚 Caminhão 1 indo para vértice 4 (tempo: 66min)
+🚚 Caminhão indo para ponto de água 5 (tempo: 40min)
+⛽ Caminhão reabastecido na Lagoa 5 (água: 1000L)
+🚒 Caminhão 3 apagou fogo em 4 (10 minutos)
+✅ Fogo apagado nos vértices: [4]
+
+⏱ Tempo: 252 minutos
+
+=== RELATÓRIO FINAL ===
+
+=== SISTEMA DE PREVENÇÃO E COMABATE A INCÊNDIO NO CARIRI ===
+
+✅ CONTIDO | Tempo: 252/480 minutos
+Vértices salvos: 7/12 - 58.33%
+Vértices queimados: 5: [2, 3, 8, 11, 4]
+Vértices protegidos: 7
+  ⏱ Tempo ativo: 196 minutos
+ equipe: [1, 5, 9]
+
+🔧 Recursos utilizados:
+
+Caminhão 1:
+  🚛 Rota: [1, 11, 2, 3, 2, 5, 4]
+  💧 Água usada: 906L
+  ⏱ Tempo ativo: 138 minutos
+
+Caminhão 2:
+  🚛 Rota: [5, 2, 3, 2, 5, 4, 5]
+  💧 Água usada: 983L
+  ⏱ Tempo ativo: 142 minutos
+
+Caminhão 3:
+  🚛 Rota: [9, 8, 7, 6, 5, 2, 3, 2, 5, 4]
+  💧 Água usada: 673L
+  ⏱ Tempo ativo: 196 minutos
+================================================
+
+=== SIMULAÇÃO DE COMBATE A INCÊNDIOS ===
+Incêndio iniciado no Parque Ecologico, ao lado da UFCA e na área rural perto do Horto: [5, 11, 9]
+Postos de Brigadas: [0, 7, 2]
+Pontos de água: [4, 3]
+
+
+=== PROGRESSO DA SIMULAÇÃO ===
+
+⏱ Tempo: 0 minutos
+🔥 Vértices em chamas: [5, 9, 11]
+💧 Água disponível: [1000, 1000, 1000]
+🚨 Fogo se propagou para: [8, 10, 1, 6]
+🔥 Vértices completamente queimados: [5, 8, 6, 11, 1, 9, 10]
+Equipe protegeu vértice 0 com sucesso
+Equipe protegeu vértice 2 com sucesso
+Equipe protegeu vértice 3 com sucesso
+Equipe protegeu vértice 4 com sucesso
+Equipe protegeu vértice 7 com sucesso
+🚚 Caminhão 1 indo para vértice 1 (tempo: 10min)
+🚚 Caminhão 2 indo para vértice 6 (tempo: 17min)
+🚚 Caminhão 3 indo para vértice 5 (tempo: 18min)
+
+⏱ Tempo: 18 minutos
+🔥 Vértices em chamas: [11, 1, 9, 5, 8, 10, 6]
+💧 Água disponível: [1000, 1000, 1000]
+🚒 Caminhão 1 apagou fogo em 1 (10 minutos)
+🚒 Caminhão 2 apagou fogo em 6 (10 minutos)
+🚒 Caminhão 3 apagou fogo em 5 (10 minutos)
+✅ Fogo apagado nos vértices: [5, 6, 1]
+
+⏱ Tempo: 28 minutos
+🔥 Vértices em chamas: [11, 8, 10, 9]
+💧 Água disponível: [763, 88, 263]
+Equipe protegeu vértice 1 com sucesso
+Equipe protegeu vértice 5 com sucesso
+🚚 Caminhão 1 indo para vértice 11 (tempo: 24min)
+🚚 Caminhão 2 indo para vértice 10 (tempo: 20min)
+🚚 Caminhão 3 indo para vértice 10 (tempo: 5min)
+
+⏱ Tempo: 52 minutos
+🔥 Vértices em chamas: [11, 8, 10, 9]
+💧 Água disponível: [763, 88, 263]
+🚒 Caminhão 1 apagou fogo em 11 (10 minutos)
+🚚 Caminhão indo para ponto de água 2 (tempo: 23min)
+⛽ Caminhão reabastecido na Lagoa 2 (água: 1000L)
+🚚 Caminhão indo para ponto de água 2 (tempo: 23min)
+⛽ Caminhão reabastecido na Lagoa 2 (água: 1000L)
+✅ Fogo apagado nos vértices: [11]
+
+⏱ Tempo: 70 minutos
+🔥 Vértices em chamas: [8, 10, 9]
+💧 Água disponível: [200, 1000, 1000]
+Equipe protegeu vértice 11 com sucesso
+🚚 Caminhão 1 indo para vértice 10 (tempo: 25min)
+🚚 Caminhão 2 indo para vértice 10 (tempo: 23min)
+🚚 Caminhão 3 indo para vértice 10 (tempo: 23min)
+
+⏱ Tempo: 95 minutos
+🔥 Vértices em chamas: [8, 10, 9]
+💧 Água disponível: [200, 1000, 1000]
+🚚 Caminhão indo para ponto de água 2 (tempo: 23min)
+⛽ Caminhão reabastecido na Lagoa 2 (água: 1000L)
+🚒 Caminhão 2 apagou fogo em 10 (10 minutos)
+🚚 Caminhão 3 indo para vértice 8 (tempo: 57min)
+✅ Fogo apagado nos vértices: [10]
+
+⏱ Tempo: 152 minutos
+🔥 Vértices em chamas: [8, 9]
+💧 Água disponível: [1000, 315, 1000]
+🚚 Caminhão 1 indo para vértice 8 (tempo: 70min)
+🚚 Caminhão 2 indo para vértice 8 (tempo: 57min)
+🚒 Caminhão 3 apagou fogo em 8 (10 minutos)
+✅ Fogo apagado nos vértices: [8]
+
+⏱ Tempo: 222 minutos
+🔥 Vértices em chamas: [9]
+💧 Água disponível: [1000, 315, 668]
+Equipe protegeu vértice 8 com sucesso
+🚚 Caminhão 1 indo para vértice 9 (tempo: 32min)
+🚚 Caminhão 2 indo para vértice 9 (tempo: 32min)
+🚚 Caminhão 3 indo para vértice 9 (tempo: 32min)
+
+⏱ Tempo: 254 minutos
+🔥 Vértices em chamas: [9]
+💧 Água disponível: [1000, 315, 668]
+🚒 Caminhão 1 apagou fogo em 9 (10 minutos)
+✅ Fogo apagado nos vértices: [9]
+
+⏱ Tempo: 264 minutos
+
+=== RELATÓRIO FINAL ===
+
+=== SISTEMA DE PREVENÇÃO E COMABATE A INCÊNDIO NO CARIRI ===
+
+✅ CONTIDO | Tempo: 264/480 minutos
+Vértices salvos: 5/12 - 41.67%
+Vértices queimados: 7: [5, 8, 6, 11, 1, 9, 10]
+Vértices protegidos: 9
+  ⏱ Tempo ativo: 178 minutos
+ equipe: [0, 7, 2]
+
+🔧 Recursos utilizados:
+
+Caminhão 1:
+  🚛 Rota: [0, 1, 11, 10, 5, 2, 5, 6, 7, 8, 9]
+  💧 Água usada: 1374L
+  ⏱ Tempo ativo: 214 minutos
+
+Caminhão 2:
+  🚛 Rota: [7, 6, 5, 10, 5, 2, 5, 10, 5, 6, 7, 8, 9]
+  💧 Água usada: 1597L
+  ⏱ Tempo ativo: 192 minutos
+
+Caminhão 3:
+  🚛 Rota: [2, 5, 10, 5, 2, 5, 10, 5, 6, 7, 8, 9]
+  💧 Água usada: 1069L
+  ⏱ Tempo ativo: 178 minutos
+========================================================
+=== SIMULAÇÃO DE COMBATE A INCÊNDIOS ===
+Incêndio iniciado no Parque Ecologico, ao lado da UFCA e na área rural perto do Horto: [5, 7, 11]
+Postos de Brigadas: [9, 4, 1]
+Pontos de água: [0, 3]
+
+
+=== PROGRESSO DA SIMULAÇÃO ===
+
+⏱ Tempo: 0 minutos
+🔥 Vértices em chamas: [5, 11, 7]
+💧 Água disponível: [1000, 1000, 1000]
+🚨 Fogo se propagou para: [8, 10, 2, 6]
+🔥 Vértices completamente queimados: [2, 7, 8, 5, 6, 11, 10]
+Equipe protegeu vértice 0 com sucesso
+Equipe protegeu vértice 1 com sucesso
+Equipe protegeu vértice 3 com sucesso
+Equipe protegeu vértice 4 com sucesso
+Equipe protegeu vértice 9 com sucesso
+🚚 Caminhão 1 indo para vértice 8 (tempo: 32min)
+🚚 Caminhão 2 indo para vértice 5 (tempo: 40min)
+🚚 Caminhão 3 indo para vértice 7 (tempo: 20min)
+
+⏱ Tempo: 40 minutos
+🔥 Vértices em chamas: [11, 2, 7, 5, 8, 10, 6]
+💧 Água disponível: [1000, 1000, 1000]
+🚒 Caminhão 1 apagou fogo em 8 (10 minutos)
+🚒 Caminhão 2 apagou fogo em 5 (10 minutos)
+🚒 Caminhão 3 apagou fogo em 7 (10 minutos)
+✅ Fogo apagado nos vértices: [7, 8, 5]
+
+⏱ Tempo: 50 minutos
+🔥 Vértices em chamas: [11, 10, 2, 6]
+💧 Água disponível: [668, 263, 569]
+Equipe protegeu vértice 5 com sucesso
+Equipe protegeu vértice 7 com sucesso
+🚚 Caminhão 1 indo para vértice 6 (tempo: 37min)
+🚚 Caminhão 2 indo para vértice 10 (tempo: 5min)
+🚚 Caminhão 3 indo para vértice 6 (tempo: 17min)
+
+⏱ Tempo: 87 minutos
+🔥 Vértices em chamas: [11, 10, 2, 6]
+💧 Água disponível: [668, 263, 569]
+🚚 Caminhão indo para ponto de água 0 (tempo: 27min)
+⛽ Caminhão reabastecido na Lagoa 0 (água: 1000L)
+🚚 Caminhão indo para ponto de água 3 (tempo: 31min)
+⛽ Caminhão reabastecido na Lagoa 3 (água: 1000L)
+🚚 Caminhão indo para ponto de água 0 (tempo: 27min)
+⛽ Caminhão reabastecido na Lagoa 0 (água: 1000L)
+
+⏱ Tempo: 106 minutos
+🔥 Vértices em chamas: [11, 10, 2, 6]
+💧 Água disponível: [1000, 1000, 1000]
+🚚 Caminhão 1 indo para vértice 6 (tempo: 27min)
+🚚 Caminhão 2 indo para vértice 2 (tempo: 8min)
+🚚 Caminhão 3 indo para vértice 6 (tempo: 27min)
+
+⏱ Tempo: 133 minutos
+🔥 Vértices em chamas: [11, 10, 2, 6]
+💧 Água disponível: [1000, 1000, 1000]
+🚒 Caminhão 1 apagou fogo em 6 (10 minutos)
+🚒 Caminhão 2 apagou fogo em 2 (10 minutos)
+🚚 Caminhão 3 indo para vértice 10 (tempo: 20min)
+✅ Fogo apagado nos vértices: [2, 6]
+
+⏱ Tempo: 153 minutos
+🔥 Vértices em chamas: [11, 10]
+💧 Água disponível: [88, 17, 1000]
+Equipe protegeu vértice 2 com sucesso
+🚚 Caminhão 1 indo para vértice 10 (tempo: 20min)
+🚚 Caminhão 2 indo para vértice 11 (tempo: 20min)
+🚒 Caminhão 3 apagou fogo em 10 (10 minutos)
+✅ Fogo apagado nos vértices: [10]
+
+⏱ Tempo: 173 minutos
+🔥 Vértices em chamas: [11]
+💧 Água disponível: [88, 17, 315]
+Equipe protegeu vértice 10 com sucesso
+🚚 Caminhão 1 indo para vértice 11 (tempo: 25min)
+🚚 Caminhão indo para ponto de água 1 (tempo: 24min)
+⛽ Caminhão reabastecido na Lagoa 1 (água: 1000L)
+🚚 Caminhão 3 indo para vértice 11 (tempo: 25min)
+
+⏱ Tempo: 198 minutos
+🔥 Vértices em chamas: [11]
+💧 Água disponível: [88, 1000, 315]
+🚚 Caminhão indo para ponto de água 1 (tempo: 24min)
+⛽ Caminhão reabastecido na Lagoa 1 (água: 1000L)
+🚚 Caminhão 2 indo para vértice 11 (tempo: 24min)
+🚚 Caminhão indo para ponto de água 1 (tempo: 24min)
+⛽ Caminhão reabastecido na Lagoa 1 (água: 1000L)
+
+⏱ Tempo: 222 minutos
+🔥 Vértices em chamas: [11]
+💧 Água disponível: [1000, 1000, 1000]
+🚚 Caminhão 1 indo para vértice 11 (tempo: 24min)
+🚒 Caminhão 2 apagou fogo em 11 (10 minutos)
+✅ Fogo apagado nos vértices: [11]
+
+⏱ Tempo: 246 minutos
+
+=== RELATÓRIO FINAL ===
+
+=== SISTEMA DE PREVENÇÃO E COMABATE A INCÊNDIO NO CARIRI ===
+
+✅ CONTIDO | Tempo: 246/480 minutos
+Vértices salvos: 5/12 - 41.67%
+Vértices queimados: 7: [2, 7, 8, 5, 6, 11, 10]
+Vértices protegidos: 9
+  ⏱ Tempo ativo: 180 minutos
+ equipe: [9, 4, 1]
+
+🔧 Recursos utilizados:
+
+Caminhão 1:
+  🚛 Rota: [9, 8, 7, 6, 7, 0, 7, 6, 5, 10, 11, 1, 11]
+  💧 Água usada: 1244L
+  ⏱ Tempo ativo: 236 minutos
+
+Caminhão 2:
+  🚛 Rota: [4, 5, 10, 5, 2, 3, 2, 11, 1, 11]
+  💧 Água usada: 2283L
+  ⏱ Tempo ativo: 182 minutos
+
+Caminhão 3:
+  🚛 Rota: [1, 0, 7, 6, 7, 0, 7, 6, 5, 10, 11, 1]
+  💧 Água usada: 1116L
+  ⏱ Tempo ativo: 180 minutos
